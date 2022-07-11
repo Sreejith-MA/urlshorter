@@ -29,7 +29,7 @@ app.get('/:shortUrl', async (req, res) => {
   shortUrl.clicks++
   shortUrl.save()
 
-  res.redirect(shortUrl.full)
+    res.status(301).redirect(shortUrl.full)
 })
 
 app.listen(process.env.PORT || 5000);
